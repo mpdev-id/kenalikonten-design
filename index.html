@@ -1,13 +1,35 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="/dist/kenalikonten.css" rel="stylesheet">
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world! 
-  </h1>
+
+<body class="max-w-7xl mx-auto">
+  <!-- navbar -->
+  <nav class="flex flex-row justify-between items-center h-20 px-44 ">
+    <!-- logo   -->
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <img src="dist/icons/favicon.svg" alt="My Happy SVG" />
+    </a>
+    <!-- menu -->
+    <ul class="flex flex-row gap-x-8 items-center">
+      <li class="hover:cursor-pointer  hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">Beranda</li>
+      <li class="hover:cursor-pointer  hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">Konten Tervalidasi</li>
+      <li class="hover:cursor-pointer  hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">Donatur</li>
+      <div class="hover:cursor-pointer  font-medium text-base">
+        <div class="bg-[#FF7366] text-white px-5 py-3 rounded-full shadow-xl ">
+          Donasi
+        </div>
+      </div>
+    </ul>
+  </nav>
 </body>
+
 </html>
