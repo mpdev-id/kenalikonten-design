@@ -1,318 +1,221 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
-        <link href="/dist/kenalikonten.css" rel="stylesheet">
-    </head>
-    <body class="max-w-7xl mx-auto bg-[#F7F7F7]">
-        <!-- navbar -->
-        <nav class="flex flex-row justify-between items-center h-20 px-44 shadow">
-            <!-- logo   -->
-            <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="dist/icons/favicon.svg" alt="My Happy SVG" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="/dist/kenalikonten.css" rel="stylesheet">
+</head>
+<body class=" bg-[#F7F7F7]">
+  <!-- navbar -->
+  <section class="shadow sticky top-0 bg-[#F7F7F7]">
+    <div class="max-w-7xl mx-auto">
+      <nav class="flex flex-row justify-between items-center h-20 px-44 ">
+        <!-- logo   -->
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="dist/icons/favicon.svg" alt="My Happy SVG" />
+        </a>
+        <!-- menu -->
+        <ul class="flex flex-row gap-x-8 items-center">
+          <li class="hover:cursor-pointer underline underline-offset-[33px] decoration-[3px]  text-[#FF7366] font-medium text-base">
+            Beranda</li>
+          <li class="hover:cursor-pointer hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">
+            Konten Tervalidasi</li>
+          <li class="hover:cursor-pointer hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">
+            Donatur</li>
+          <div class="hover:cursor-pointer  font-medium text-base">
+            <div class="bg-[#FF7366] text-white px-5 py-3 rounded-full shadow-xl ">
+              Donasi
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <section class="flex flex-row justify-around items-center mt-[90px] max-w-4xl mx-auto">
+    <div class="text-center ">
+      <div class="text-[#151F33] text-[128px] text-9xl font-bold">
+        68%
+      </div>
+      <div class="font-bold text-[32px] left-0">
+        Media Sosial Jadi <span class="text-[#FF7366]">Sumber Hoaks</span><br> Terbesar
+        Tahun 2023
+      </div>
+    </div>
+    <div>
+      <img src="dist/icons/hero-right.svg" alt="">
+    </div>
+  </section>
+  <section class="flex flex-row justify-normal gap-[20px] w-[824px] px-[24px] py-[28px] bg-[#fff] shadow-xl mx-auto mt-[60px] rounded-[8px]">
+    <div class="w-[139px]">
+      <img src="/dist/icons/favicon.svg" alt="logo" class="w-[139px]">
+    </div>
+    <div class="w-[605px]">
+      <p class="font-normal text-[16px]">
+        Kenali Konten adalah website untuk memvalidasi keaslian konten yang tersebar di
+        situs maupun media sosial. Kirimkan screenshot konten, berita, dan tautan
+        informasi lainnya yang kamu baca. Selanjutnya biarkan tim Kenali Konten yang
+        memvalidasi konten tersebut
+        <span class="text-[#FF1F39] font-semibold">hoaks</span> atau <span class="text-[#58BF18] font-semibold">fakta</span>.
+      </p>
+      <div class="flex flex-row mt-5 gap-x-5">
+        <button class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans" onclick="openModal(true)" >
+          Coba Sekarang
+        </button>
+        <button class="w-[228px] px-5 py-3 bg-[#fff] shadow-xl rounded-full  text-[#FF7366] border-solid border-[1.5px] border-[#FF7366] font-sans">
+          Lihat Konten Tervalidasi
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-row justify-between items-center w-[824px] mt-[215px] mx-auto">
+    <div class="w-[400px] pr-[40px]">
+      <h1 class="text-[32px] color-[#333] font-semibold leading-none">
+        Eits! Baru baca judul, tapi udah langsung percaya aja?
+      </h1>
+      <p class="my-4">Jangan dulu terbawa emosi ketika baru membaca judul berita. Tonton
+        ini dulu biar kamu paham apa yang mesti dilakukan sebelum percaya pada suatu
+        berita</p>
+      <div class="pt-3">
+        <a href="https://www.youtube.com/embed/0RktiyVNu7U?si=JcNW9GRea4wFAvyK" target="_blank" class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans">
+          Tonton di Youtube
+        </a>
+      </div>
+    </div>
+    <div class="w-[400px]">
+      <iframe class="rounded-[8px]" width="372" height="210" src="https://www.youtube.com/embed/0RktiyVNu7U?si=JcNW9GRea4wFAvyK" title="YouTube: Sebelum percaya judulnya, pause dulu" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </section>
+  <section class="h-[700px] mt-[188px] bg-[#FFE4E1] pt-[53px]">
+    <div class="flex flex-col justify-center items-center w-[1280px] m-auto">
+      <div class="w-[661px] text-center my-4">
+        <h1 class="text-[32px] color-[#333] font-semibold leading-none w-[461px] mx-auto">
+          Jadi bagian dari tim <span class="text-[#39BFBF]"> gerakan </span> Kenali Konten
+        </h1>
+        <p class="mt-5">Gabung dan gerak bersama dengan menjadi tim relawan gerakan Kenali
+          Konten. Kembangkan platform dan komunitas agar masyarakat bisa teredukasi untuk
+          membedakan berita atau konten yang hoaks dan fakta.</p>
+      </div>
+      <div class="w-[936px] flex flex-row mt-5 mb-10 overscroll-none">
+        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
+          <div class="mx-auto mt-9">
+            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
+              <path d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z" fill="#FF7366" />
+            </svg>
+          </div>
+          <div class="py-3">
+            <h2 class="text-center">Tim Relawan</h2>
+            <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
+          </div>
+          <div class="w-[245px] mx-auto">
+            <p class="text-center">
+              Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
+            </p>
+          </div>
+          <div class="mx-auto">
+            <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
+              Daftar
+              <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
             </a>
-            <!-- menu -->
-            <ul class="flex flex-row gap-x-8 items-center">
-                <li
-                    class="hover:cursor-pointer  hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">
-                    Beranda</li>
-                <li
-                    class="hover:cursor-pointer  hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">
-                    Konten Tervalidasi</li>
-                <li
-                    class="hover:cursor-pointer  hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">
-                    Donatur</li>
-                <div class="hover:cursor-pointer  font-medium text-base">
-                    <div class="bg-[#FF7366] text-white px-5 py-3 rounded-full shadow-xl ">
-                        Donasi
-                    </div>
-                </div>
-            </ul>
-        </nav>
-        <section class="flex flex-row justify-normal items-center mt-[90px] max-w-4xl mx-auto">
-            <div class="text-center m-auto">
-                <div class="text-[#151F33] text-[128px] text-9xl font-bold">
-                    68%
-                </div>
-                <div class="font-bold text-[32px]">
-                    Media Sosial Jadi <span class="text-[#FF7366]">Sumber Hoaks</span><br> Terbesar
-                    Tahun 2023
-                </div>
-            </div>
-            <div>
-                <img src="dist/icons/hero-right.svg" alt="">
-            </div>
-        </section>
-        <section
-            class="flex flex-row justify-normal gap-[20px] w-[824px] px-[24px] py-[28px] bg-[#fff] shadow-xl mx-auto mt-[60px] rounded-[8px]">
-            <div class="w-[139px]">
-                <img src="/dist/icons/favicon.svg" alt="logo" class="w-[139px]">
-            </div>
-            <div class="w-[605px]">
-                <p class="font-normal text-[16px]">
-                    Kenali Konten adalah website untuk memvalidasi keaslian konten yang tersebar di
-                    situs maupun media sosial. Kirimkan screenshot konten, berita, dan tautan
-                    informasi lainnya yang kamu baca. Selanjutnya biarkan tim Kenali Konten yang
-                    memvalidasi konten tersebut
-                    <span class="text-[#FF1F39] font-semibold">hoaks</span> atau <span
-                        class="text-[#58BF18] font-semibold">fakta</span>.
-                </p>
-                <div class="flex flex-row mt-5 gap-x-5">
-                    <button
-                        class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans">
-                        Coba Sekarang
-                    </button>
-                    <button
-                        class="w-[228px] px-5 py-3 bg-[#fff] shadow-xl rounded-full  text-[#FF7366] border-solid border-[1.5px] border-[#FF7366] font-sans">
-                        Lihat Konten Tervalidasi
-                    </button>
-                </div>
-            </div>
-        </section>
-        <section class="flex flex-row justify-normal items-center w-[824px] mt-[215px] mx-auto">
-            <div class="w-[400px] pr-[40px]">
-                <h1 class="text-[32px] color-[#333] font-semibold leading-none">
-                    Eits! Baru baca judul, tapi udah langsung percaya aja?
-                </h1>
-                <p class="my-4">Jangan dulu terbawa emosi ketika baru membaca judul berita. Tonton
-                    ini dulu biar kamu paham apa yang mesti dilakukan sebelum percaya pada suatu
-                    berita</p>
-                <div class="pt-3">
-                    <a href="https://www.youtube.com/embed/0RktiyVNu7U?si=JcNW9GRea4wFAvyK"
-                        target="_blank"
-                        class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans">
-                        Tonton di Youtube
-                    </a>
-                </div>
-            </div>
-            <div class="w-[400px]">
-                <iframe class="rounded-[8px]" width="372" height="210"
-                    src="https://www.youtube.com/embed/0RktiyVNu7U?si=JcNW9GRea4wFAvyK"
-                    title="YouTube: Sebelum percaya judulnya, pause dulu" frameborder="0"
-                    allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-        </section>
-        <section
-            class="flex flex-col justify-center items-center w-[1280px] h-[700px] mt-[188px] bg-[#FFE4E1] pt-[53px]">
-            <div class="w-[661px] text-center my-4 ">
-                <h1 class="text-[32px] color-[#333] font-semibold leading-none w-[461px] mx-auto">
-                    Jadi bagian dari tim <span class="text-[#39BFBF]"> gerakan </span> Kenali Konten
-                </h1>
-                <p class="my-4">Gabung dan gerak bersama dengan menjadi tim relawan gerakan Kenali
-                    Konten. Kembangkan platform dan komunitas agar masyarakat bisa teredukasi untuk
-                    membedakan berita atau konten yang hoaks dan fakta.</p>
-            </div>
-            <div class="w-[936px] flex flex-row my-12 overscroll-none">
-                <div
-                    class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
-                    <div class="mx-auto mt-9">
-                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
-                            <path
-                                d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z"
-                                fill="#FF7366" />
-                        </svg>
-                    </div>
-                    <div class="py-3">
-                        <h2 class="text-center">Tim Relawan</h2>
-                        <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
-                    </div>
-                    <div class="w-[245px] mx-auto">
-                        <p class="text-center">
-                            Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
-                        </p>
-                    </div>
-                    <div class="mx-auto">
-                        <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
-                            Daftar
-                            <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
-                    <div class="mx-auto mt-9">
-                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
-                            <path
-                                d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z"
-                                fill="#FF7366" />
-                        </svg>
-                    </div>
-                    <div class="py-3">
-                        <h2 class="text-center">Tim Relawan</h2>
-                        <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
-                    </div>
-                    <div class="w-[245px] mx-auto">
-                        <p class="text-center">
-                            Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
-                        </p>
-                    </div>
-                    <div class="mx-auto">
-                        <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
-                            Daftar
-                            <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
-                    <div class="mx-auto mt-9">
-                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
-                            <path
-                                d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z"
-                                fill="#FF7366" />
-                        </svg>
-                    </div>
-                    <div class="py-3">
-                        <h2 class="text-center">Tim Relawan</h2>
-                        <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
-                    </div>
-                    <div class="w-[245px] mx-auto">
-                        <p class="text-center">
-                            Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
-                        </p>
-                    </div>
-                    <div class="mx-auto">
-                        <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
-                            Daftar
-                            <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
-                    <div class="mx-auto mt-9">
-                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
-                            <path
-                                d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z"
-                                fill="#FF7366" />
-                        </svg>
-                    </div>
-                    <div class="py-3">
-                        <h2 class="text-center">Tim Relawan</h2>
-                        <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
-                    </div>
-                    <div class="w-[245px] mx-auto">
-                        <p class="text-center">
-                            Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
-                        </p>
-                    </div>
-                    <div class="mx-auto">
-                        <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
-                            Daftar
-                            <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
-                    <div class="mx-auto mt-9">
-                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
-                            <path
-                                d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z"
-                                fill="#FF7366" />
-                        </svg>
-                    </div>
-                    <div class="py-3">
-                        <h2 class="text-center">Tim Relawan</h2>
-                        <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
-                    </div>
-                    <div class="w-[245px] mx-auto">
-                        <p class="text-center">
-                            Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
-                        </p>
-                    </div>
-                    <div class="mx-auto">
-                        <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
-                            Daftar
-                            <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="mx-auto flex gap-x-6 pb-[53px]">
-                <img class="w-8" src="dist/images/ic-arrow-slide-left.png" alt="">
-                <img class="w-8" src="dist/images/ic-arrow-slide-right.png" alt="">
-            </div>
-        </section>
-        <section class="flex flex-row justify-normal w-[824px] mt-[188px] mx-auto">
-            <div class="w-[400px] pr-[40px] ">
-                <img class="w-[348.567px] h-[257.17px]" src="./dist/images/img-collabs.png" alt=""
-                    srcset="">
-            </div>
-            <div class="w-[400px]">
-                <h1 class="text-[32px] color-[#333] font-semibold leading-9">
-                    Gerak bareng dengan kolaborasi bersama kami
-                </h1>
-                <p class="font-normal text-[16px] py-4">
-                    Tim Kenali Konten menerima kerjasama dan kolaborasi dalam bentuk apapun sebagai
-                    upaya mengedukasi masyarakat perihal
-                    <span class="text-[#FF1F39] font-semibold">hoaks</span> dan <span
-                        class="text-[#58BF18] font-semibold">fakta</span>.
-                </p>
-                <button
-                    class="px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans font-[16px]">
-                    Hubungi Kami
-                </button>
-            </div>
-        </section>
-        <section class="w-[1280px] mt-[188px] bg-[#39BFBF]  ">
-            <div class="w-[824px] flex flex-row justify-between mx-auto py-[60px]">
-                <div class="w-[400px]">
-                    <img class="w-[167px] h-[90px] mb-5" src="./dist/images/logo-main.png"
-                        alt="Logo kenalikonten" srcset="./dist/images/logo-main.png">
-                    <p class="pt-5 text-[#333] font-[16px]">Kenali Konten adalah sebuah gerakan
-                        independen dan tidak terafiliasi kandidat atau partai politik tertentu</p>
-                    <p class="pt-3 text-[#fff]">© 2023 Kenali Konten</p>
-                </div>
-                <div class="w-[200px]">
-                    <ul>
-                        <h2 class="font-bold text-[18px] pb-5">Eksplor</h2>
-                        <li class="pb-3">
-                            <a class="font-normal" href="#">Tim Kami</a>
-                        </li>
-                        <li class="pb-3">
-                            <a class="font-normal" href="#">TurunTangan Serang</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w-[200px]">
-                    <ul>
-                        <li>
-                            <h2 class="font-bold text-[18px] pb-5">Media & Kontak</h2>
-                        </li>
-                        <li class="pb-3">
-                            <a class="font-normal" href="#">kenalikonten@gmail.com</a>
-                        </li>
-                        <li class="pb-3">
-                            <a class="font-normal" href="#">Instagram</a>
-                        </li>
-                        <li class="pb-3">
-                            <a class="font-normal" href="#">Twitter</a>
-                        </li>
-                        <li class="pb-3">
-                            <a class="font-normal" href="#">Tiktok</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </body>
+          </div>
+        </div>
+        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
+          <div class="mx-auto mt-9">
+            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
+              <path d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z" fill="#FF7366" />
+            </svg>
+          </div>
+          <div class="py-3">
+            <h2 class="text-center">Tim Relawan</h2>
+            <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
+          </div>
+          <div class="w-[245px] mx-auto">
+            <p class="text-center">
+              Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
+            </p>
+          </div>
+          <div class="mx-auto">
+            <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
+              Daftar
+              <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto flex gap-x-6 pb-[55px]">
+        <a href="">
+            <img class="w-8" src="dist/images/ic-arrow-slide-left.png" alt="">
+        </a>
+        <a href="">
+            <img class="w-8" src="dist/images/ic-arrow-slide-right.png" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-row justify-normal w-[824px] mt-[188px] mx-auto">
+    <div class="w-[400px] pr-[40px] ">
+      <img class="w-[348.567px] h-[257.17px]" src="./dist/images/img-collabs.png" alt="" srcset="">
+    </div>
+    <div class="w-[400px]">
+      <h1 class="text-[32px] color-[#333] font-semibold leading-9">
+        Gerak bareng dengan kolaborasi bersama kami
+      </h1>
+      <p class="font-normal text-[16px] py-4">
+        Tim Kenali Konten menerima kerjasama dan kolaborasi dalam bentuk apapun sebagai
+        upaya mengedukasi masyarakat perihal
+        <span class="text-[#FF1F39] font-semibold">hoaks</span> dan <span class="text-[#58BF18] font-semibold">fakta</span>.
+      </p>
+      <button class="px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans font-[16px]">
+        Hubungi Kami
+      </button>
+    </div>
+  </section>
+  <section class="mt-[188px] bg-[#39BFBF]  ">
+    <div class="w-[1280px] m-auto">
+      <div class="w-[936px] flex flex-row justify-between mx-auto py-[60px]">
+        <div class="w-[400px]">
+          <img class="w-[167px] h-[90px] mb-5" src="./dist/images/logo-main.png" alt="Logo kenalikonten" srcset="./dist/images/logo-main.png">
+          <p class="pt-5 text-[#333] font-[16px]">Kenali Konten adalah sebuah gerakan
+            independen dan tidak terafiliasi kandidat atau partai politik tertentu</p>
+          <p class="pt-3 text-[#fff]">© 2023 Kenali Konten</p>
+        </div>
+        <div class="w-[200px]">
+          <ul>
+            <h2 class="font-bold text-[18px] pb-5">Eksplor</h2>
+            <li class="pb-3">
+              <a class="font-normal" href="#">Tim Kami</a>
+            </li>
+            <li class="pb-3">
+              <a class="font-normal" href="#">TurunTangan Serang</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-[200px]">
+          <ul>
+            <li>
+              <h2 class="font-bold text-[18px] pb-5">Media & Kontak</h2>
+            </li>
+            <li class="pb-3">
+              <a class="font-normal" href="#">kenalikonten@gmail.com</a>
+            </li>
+            <li class="pb-3">
+              <a class="font-normal" href="#">Instagram</a>
+            </li>
+            <li class="pb-3">
+              <a class="font-normal" href="#">Twitter</a>
+            </li>
+            <li class="pb-3">
+              <a class="font-normal" href="#">Tiktok</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
 </html>
