@@ -1,22 +1,25 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="/dist/kenalikonten.css" rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" /> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body class=" bg-[#F7F7F7]">
+
+<body class="font-[poppins] bg-[#F7F7F7]">
   <!-- navbar -->
   <section class="shadow sticky top-0 bg-[#F7F7F7]">
     <div class="max-w-7xl mx-auto">
       <nav class="flex flex-row justify-between items-center h-20 px-44 ">
         <!-- logo   -->
         <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src="dist/icons/favicon.svg" alt="My Happy SVG" />
+          <img loading="lazy" src="dist/icons/favicon.svg" alt="My Happy SVG" />
         </a>
         <!-- menu -->
         <ul class="flex flex-row gap-x-8 items-center">
@@ -46,12 +49,12 @@
       </div>
     </div>
     <div>
-      <img src="dist/icons/hero-right.svg" alt="">
+      <img loading="lazy" src="dist/icons/hero-right.svg" alt="">
     </div>
   </section>
   <section class="flex flex-row justify-normal gap-[20px] w-[824px] px-[24px] py-[28px] bg-[#fff] shadow-xl mx-auto mt-[60px] rounded-[8px]">
     <div class="w-[139px]">
-      <img src="/dist/icons/favicon.svg" alt="logo" class="w-[139px]">
+      <img loading="lazy" src="/dist/icons/favicon.svg" alt="logo" class="w-[139px]">
     </div>
     <div class="w-[605px]">
       <p class="font-normal text-[16px]">
@@ -62,7 +65,7 @@
         <span class="text-[#FF1F39] font-semibold">hoaks</span> atau <span class="text-[#58BF18] font-semibold">fakta</span>.
       </p>
       <div class="flex flex-row mt-5 gap-x-5">
-        <button class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans" onclick="openModal(true)" >
+        <button id="modalKirimKonten" class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans">
           Coba Sekarang
         </button>
         <button class="w-[228px] px-5 py-3 bg-[#fff] shadow-xl rounded-full  text-[#FF7366] border-solid border-[1.5px] border-[#FF7366] font-sans">
@@ -149,10 +152,10 @@
       </div>
       <div class="mx-auto flex gap-x-6 pb-[55px]">
         <a href="">
-            <img class="w-8" src="dist/images/ic-arrow-slide-left.png" alt="">
+          <img class="w-8" src="dist/images/ic-arrow-slide-left.png" alt="">
         </a>
         <a href="">
-            <img class="w-8" src="dist/images/ic-arrow-slide-right.png" alt="">
+          <img class="w-8" src="dist/images/ic-arrow-slide-right.png" alt="">
         </a>
       </div>
     </div>
@@ -217,5 +220,139 @@
       </div>
     </div>
   </section>
+
+  <!-- modal -->
+  <div id="modalKirim" class="hidden fixed inset-0 bg-slate-600 bg-opacity-50 overflow-y-auto h-screen flex items-center justify-center transition-all">
+    <div class="bg-[#F7F7F7] rounded-lg shadow-xl w-[600px] opacity-100 transform  transition-transform duration-400 p-8">
+      <div class="flex justify-end">
+        <button id="closeModalBtn">
+          <svg class="bg-[#FFE4E1] w-[32px] h-[32px] rounded-full" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18.3 5.70998C18.2075 5.61728 18.0976 5.54373 17.9766 5.49355C17.8556 5.44337 17.7259 5.41754 17.595 5.41754C17.464 5.41754 17.3343 5.44337 17.2134 5.49355C17.0924 5.54373 16.9825 5.61728 16.89 5.70998L12 10.59L7.10998 5.69998C7.0174 5.6074 6.90749 5.53396 6.78652 5.48385C6.66556 5.43375 6.53591 5.40796 6.40498 5.40796C6.27405 5.40796 6.1444 5.43375 6.02344 5.48385C5.90247 5.53396 5.79256 5.6074 5.69998 5.69998C5.6074 5.79256 5.53396 5.90247 5.48385 6.02344C5.43375 6.1444 5.40796 6.27405 5.40796 6.40498C5.40796 6.53591 5.43375 6.66556 5.48385 6.78652C5.53396 6.90749 5.6074 7.0174 5.69998 7.10998L10.59 12L5.69998 16.89C5.6074 16.9826 5.53396 17.0925 5.48385 17.2134C5.43375 17.3344 5.40796 17.464 5.40796 17.595C5.40796 17.7259 5.43375 17.8556 5.48385 17.9765C5.53396 18.0975 5.6074 18.2074 5.69998 18.3C5.79256 18.3926 5.90247 18.466 6.02344 18.5161C6.1444 18.5662 6.27405 18.592 6.40498 18.592C6.53591 18.592 6.66556 18.5662 6.78652 18.5161C6.90749 18.466 7.0174 18.3926 7.10998 18.3L12 13.41L16.89 18.3C16.9826 18.3926 17.0925 18.466 17.2134 18.5161C17.3344 18.5662 17.464 18.592 17.595 18.592C17.7259 18.592 17.8556 18.5662 17.9765 18.5161C18.0975 18.466 18.2074 18.3926 18.3 18.3C18.3926 18.2074 18.466 18.0975 18.5161 17.9765C18.5662 17.8556 18.592 17.7259 18.592 17.595C18.592 17.464 18.5662 17.3344 18.5161 17.2134C18.466 17.0925 18.3926 16.9826 18.3 16.89L13.41 12L18.3 7.10998C18.68 6.72998 18.68 6.08998 18.3 5.70998Z" fill="#333333" />
+          </svg>
+        </button>
+      </div>
+      <div class="text-center mb-7">
+        <span class="text-3xl font-semibold my-6 text-[#333] text-center">Kirim konten yang kamu baca kepada tim Kenali Konten</span>
+      </div>
+      <form action="#" method="post">
+        <div class="my-4">
+          <span class="text-[#000] mb-2">Screenshot 1<span class="text-[#FF1F39]">*</span></span>
+          <input name="screenshot1" type="file" placeholder="Masukkan link atau tautan konten yang kamu baca" class="w-full rounded-lg bg-[#FFF] py-3 px-2 outline-none placeholder-slate-400 text-slate-[#BDBDBD] text-slate-[16px]" required>
+        </div>
+        <div class="my-4">
+          <span class="text-[#000] mb-2">Screenshot 2</span>
+          <input name="screenshot2" type="file" placeholder="Masukkan link atau tautan konten yang kamu baca" class="w-full rounded-lg bg-[#FFF] py-3 px-2 outline-none placeholder-slate-400 text-slate-[#BDBDBD] text-slate-[16px]">
+        </div>
+        <div class="my-4">
+          <span class="text-[#000] mb-2">Link atau tautan sumber konten</span>
+          <input name="link" type="text" placeholder="Masukkan link atau tautan konten yang kamu baca" class="w-full rounded-lg bg-[#FFF] py-3 px-2 outline-none placeholder-slate-400 text-slate-[#BDBDBD] text-slate-[16px]">
+        </div>
+        <div class="my-4">
+          <span class="text-[#000] mb-2">Detail Info</span>
+          <input name="detail" type="text" placeholder="Ketik info apapun" class="w-full rounded-lg bg-[#FFF] py-3 px-2 outline-none placeholder-slate-400 text-slate-[#BDBDBD] text-slate-[16px]">
+        </div>
+        <div class="my-4">
+          <span class="text-[#000] mb-5">Email<span class="text-[#FF1F39]">*</span></span>
+          <input name="email" type="text" placeholder="Masukkan email untuk balasan validasi konten" class="w-full rounded-lg bg-[#FFF] py-3 px-2 outline-none placeholder-slate-400 text-slate-[#BDBDBD] text-slate-[16px]" required>
+        </div>
+        <button class="w-full px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] ">
+          Kirim Sekarang
+        </button>
+    </div>
+    </form>
+  </div>
+
+
+  <!-- sukses -->
+  <div id="modalSukses" class="hidden fixed inset-0 bg-slate-600 bg-opacity-50 overflow-y-auto h-500 flex items-center justify-center transition-all">
+    <div class="bg-[#F7F7F7] rounded-lg shadow-xl w-[600px] opacity-100 transform  transition-transform duration-400 p-8">
+      <div class="flex justify-end">
+        <button id="closeModalBtn">
+          <svg class="bg-[#FFE4E1] w-[32px] h-[32px] rounded-full" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18.3 5.70998C18.2075 5.61728 18.0976 5.54373 17.9766 5.49355C17.8556 5.44337 17.7259 5.41754 17.595 5.41754C17.464 5.41754 17.3343 5.44337 17.2134 5.49355C17.0924 5.54373 16.9825 5.61728 16.89 5.70998L12 10.59L7.10998 5.69998C7.0174 5.6074 6.90749 5.53396 6.78652 5.48385C6.66556 5.43375 6.53591 5.40796 6.40498 5.40796C6.27405 5.40796 6.1444 5.43375 6.02344 5.48385C5.90247 5.53396 5.79256 5.6074 5.69998 5.69998C5.6074 5.79256 5.53396 5.90247 5.48385 6.02344C5.43375 6.1444 5.40796 6.27405 5.40796 6.40498C5.40796 6.53591 5.43375 6.66556 5.48385 6.78652C5.53396 6.90749 5.6074 7.0174 5.69998 7.10998L10.59 12L5.69998 16.89C5.6074 16.9826 5.53396 17.0925 5.48385 17.2134C5.43375 17.3344 5.40796 17.464 5.40796 17.595C5.40796 17.7259 5.43375 17.8556 5.48385 17.9765C5.53396 18.0975 5.6074 18.2074 5.69998 18.3C5.79256 18.3926 5.90247 18.466 6.02344 18.5161C6.1444 18.5662 6.27405 18.592 6.40498 18.592C6.53591 18.592 6.66556 18.5662 6.78652 18.5161C6.90749 18.466 7.0174 18.3926 7.10998 18.3L12 13.41L16.89 18.3C16.9826 18.3926 17.0925 18.466 17.2134 18.5161C17.3344 18.5662 17.464 18.592 17.595 18.592C17.7259 18.592 17.8556 18.5662 17.9765 18.5161C18.0975 18.466 18.2074 18.3926 18.3 18.3C18.3926 18.2074 18.466 18.0975 18.5161 17.9765C18.5662 17.8556 18.592 17.7259 18.592 17.595C18.592 17.464 18.5662 17.3344 18.5161 17.2134C18.466 17.0925 18.3926 16.9826 18.3 16.89L13.41 12L18.3 7.10998C18.68 6.72998 18.68 6.08998 18.3 5.70998Z" fill="#333333" />
+          </svg>
+        </button>
+      </div>
+ 
+      <form action="" method="post" class="flex flex-col gap-7">
+
+        <div class="text-zinc-800 text-center text-3xl font-semibold self-center whitespace-nowrap mt-7">
+          Terkirim!
+        </div>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/914bb2b895804a3550404945f7409c29667ffa8c16ddac9a36e85b446ae6853f?" class="aspect-[0.95] object-contain object-center w-[250px] justify-center items-center overflow-hidden self-center max-w-full mt-7" />
+        <div class="text-red-400 text-center text-base self-stretch mt-7 max-md:max-w-full">
+          <span class="text-zinc-800">
+            Tunggu balasan dari kami untuk validasi konten yang sudah kamu kirim atau
+            cek halaman
+          </span>
+          <span class="text-red-400">Konten Tervalidasi</span>
+          <span class="text-zinc-800">
+            untuk konten-konten yang sudah divalidasi oleh tim Kenali Konten.
+            <br />
+            <br />
+            Jangan sebar berita atau konten sebelum kamu mencari tahu kebenarannya.
+          </span>
+        </div>
+        <button  class="text-white text-base font-semibold whitespace-nowrap  shadow-lg bg-red-400 mt-7 px-16 py-3 rounded-[50px] max-md:max-w-full max-md:px-5">
+          Saya Mengerti
+        </button>
+
+    </div>
+    </form>
+  </div>
+
 </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get modal and buttons
+    const modal = document.getElementById("modalKirim");
+    const modalSukses = document.getElementById("modalSukses");
+    const modalKirimKonten = document.getElementById("modalKirimKonten");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const submitBtn = document.getElementById("submitBtn");
+
+    // Open modal with fade animation
+    modalKirimKonten.addEventListener("click", function() {
+      modal.classList.remove("hidden");
+      modal.classList.add("opacity-100", "translate-y-0");
+    });
+
+    // Close modal with fade animation
+    closeModalBtn.addEventListener("click", function() {
+      modal.classList.remove("opacity-100", "translate-y-0");
+      modal.classList.add("opacity-0", "translate-y-4");
+      setTimeout(() => {
+        modal.classList.add("hidden");
+        modal.classList.remove("opacity-0", "translate-y-4");
+      }, 500);
+    });
+
+    // Submit form (you can customize this part to handle form submission)
+    submitBtn.addEventListener("click", function() {
+      // Get form data
+      const formData1 = new FormData(document.getElementById("uploadForm1"));
+      const formData2 = new FormData(document.getElementById("uploadForm2"));
+      const linkOrSource = document.querySelector("input[type='text']").value;
+      const detailInfo = document.querySelector("textarea").value;
+      const email = document.querySelector("input[type='email']").value;
+
+      // Handle form data as needed (e.g., send it to the server)
+      console.log("Form Data 1:", formData1);
+      console.log("Form Data 2:", formData2);
+      console.log("Link or Source:", linkOrSource);
+      console.log("Detail Info:", detailInfo);
+      console.log("Email:", email);
+
+      // Close modal with fade animation (you may want to do this after successful form submission)
+      modal.classList.remove("opacity-100", "translate-y-0");
+      modal.classList.add("opacity-0", "translate-y-4");
+      setTimeout(() => {
+        modal.classList.add("hidden");
+        modal.classList.remove("opacity-0", "translate-y-4");
+      }, 300);
+    });
+  });
+</script>
+
 </html>
