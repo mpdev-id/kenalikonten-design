@@ -9,32 +9,79 @@
   <script script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-[poppins] bg-[#F7F7F7]">
+<body class="font-[poppins] bg-[#F7F7F7] ">
   <!-- navbar -->
-  <section class="shadow sticky top-0 bg-[#F7F7F7]">
+  <div id="blur-background" class="fixed top-0 left-0 w-full h-full hidden bg-slate-700  opacity-50 bg-cover"></div>
+  <nav class="shadow sticky top-0 bg-[#F7F7F7]">
     <div class="max-w-7xl mx-auto">
-      <nav class="flex flex-row justify-between items-center h-20 px-44 ">
-        <!-- logo   -->
+      <div class="flex justify-between items-center h-20 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-32">
+        <!-- logo -->
         <a href="#" target="_blank" rel="noopener noreferrer">
-            <img class="w-20" loading="lazy" src="./dist/images/logo-main.png" alt="My Happy SVG" />
+          <img class="w-20" loading="lazy" src="./dist/images/logo-main.png" alt="My Happy SVG" />
         </a>
-        <!-- menu -->
-        <ul class="flex flex-row gap-x-8 items-center">
+        <!-- Mobile menu button and menu for small screens -->
+        <div class="xl:hidden">
+          <button id="mobile-menu-button">
+            <!-- Example menu icon -->
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6">
+              <path d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+
+          <!-- Menu  Mobile menu (hidden by default) -->
+          <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-[#F7F7F7] py-4 shadow-2xl rounded-b-3xl ease-in-out transition">
+            <ul class="flex flex-col px-5 gap-y-8">
+              <li class="hover:cursor-pointer  text-[#FF7366]  font-medium text-base mt-8">
+                Beranda
+              </li>
+              <li class="hover:cursor-pointer  text-[#333] hover:text-[#FF7366]  font-medium text-base">
+                Konten Tervalidasi
+              </li>
+              <li class="hover:cursor-pointer  text-[#333] hover:text-[#FF7366]  font-medium text-base">
+                Donatur
+              </li>
+              <li class="hover:cursor-pointer font-medium text-base">
+                <div class="bg-[#FF7366] text-white px-5 py-3 rounded-full shadow-xl w-fit">
+                  Donasi
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Menu for medium and larger screens -->
+        <ul class="hidden xl:flex flex-row gap-x-8 items-center">
           <li class="hover:cursor-pointer underline underline-offset-[33px] decoration-[3px]  text-[#FF7366] font-medium text-base">
-            Beranda</li>
+            Beranda
+          </li>
           <li class="hover:cursor-pointer hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">
-            Konten Tervalidasi</li>
+            Konten Tervalidasi
+          </li>
           <li class="hover:cursor-pointer hover:underline hover:underline-offset-[33px] hover:decoration-[3px] text-[#333] hover:text-[#FF7366] font-medium text-base">
-            Donatur</li>
-          <div class="hover:cursor-pointer  font-medium text-base">
+            Donatur
+          </li>
+          <div class="hover:cursor-pointer font-medium text-base">
             <div class="bg-[#FF7366] text-white px-5 py-3 rounded-full shadow-xl ">
               Donasi
             </div>
           </div>
         </ul>
-      </nav>
+      </div>
     </div>
-  </section>
+  
+    <script>
+      // Toggle the mobile menu and blurred background when the button is clicked
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const blurBackground = document.getElementById('blur-background');
+    
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        blurBackground.classList.toggle('hidden');
+      });
+    </script>
+  </nav>
+
   <section class="flex flex-row justify-around items-center mt-[90px] max-w-4xl mx-auto">
     <div class="text-center ">
       <div class="text-[#151F33] text-[128px] text-9xl font-bold">
@@ -51,7 +98,7 @@
   </section>
   <section class="flex flex-row justify-normal gap-[20px] w-[824px] px-[24px] py-[28px] bg-[#fff] shadow-xl mx-auto mt-[60px] rounded-[8px]">
     <div class="w-[139px]">
-      <img loading="lazy" src="/dist/icons/favicon.svg" alt="logo" class="w-[139px]">
+      <img loading="lazy" src="./dist/icons/favicon.svg" alt="logo" class="w-[139px]">
     </div>
     <div class="w-[605px]">
       <p class="font-normal text-[16px]">
@@ -297,7 +344,7 @@
     </div>
     </form>
   </div>
-
+ 
 </body>
 
 <script>
