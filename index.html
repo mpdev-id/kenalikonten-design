@@ -7,6 +7,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <script script src="https://cdn.tailwindcss.com"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+  .swiper {
+  width: 200px;
+  height: 300px;
+}
+</style>
 </head>
 
 <body class="font-[poppins] bg-[#F7F7F7] ">
@@ -23,8 +35,8 @@
         <div class="xl:hidden">
           <button id="mobile-menu-button">
             <!-- Example menu icon -->
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6">
-              <path d="M4 6h16M4 12h16m-7 6h7"></path>
+            <svg id="menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" viewBox="0 0 24 24" class="w-6 h-6 duration-700 transition ease-in-out">
+              <path d="M5 22.5H25C25.6875 22.5 26.25 21.9375 26.25 21.25C26.25 20.5625 25.6875 20 25 20H5C4.3125 20 3.75 20.5625 3.75 21.25C3.75 21.9375 4.3125 22.5 5 22.5ZM5 16.25H25C25.6875 16.25 26.25 15.6875 26.25 15C26.25 14.3125 25.6875 13.75 25 13.75H5C4.3125 13.75 3.75 14.3125 3.75 15C3.75 15.6875 4.3125 16.25 5 16.25ZM3.75 8.75C3.75 9.4375 4.3125 10 5 10H25C25.6875 10 26.25 9.4375 26.25 8.75C26.25 8.0625 25.6875 7.5 25 7.5H5C4.3125 7.5 3.75 8.0625 3.75 8.75Z" fill="#333333"/>
             </svg>
           </button>
 
@@ -70,14 +82,21 @@
     </div>
   
     <script>
-      // Toggle the mobile menu and blurred background when the button is clicked
+      // Toggle menu mobile dan ubah ikon menu
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
-      const blurBackground = document.getElementById('blur-background');
+      const menuIcon = document.getElementById('menu-icon');
     
       mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        blurBackground.classList.toggle('hidden');
+        
+        // Ubah ikon menjadi "X" atau kembali ke ikon menu
+        if (mobileMenu.classList.contains('hidden')) {
+          menuIcon.innerHTML = '<path d="M5 22.5H25C25.6875 22.5 26.25 21.9375 26.25 21.25C26.25 20.5625 25.6875 20 25 20H5C4.3125 20 3.75 20.5625 3.75 21.25C3.75 21.9375 4.3125 22.5 5 22.5ZM5 16.25H25C25.6875 16.25 26.25 15.6875 26.25 15C26.25 14.3125 25.6875 13.75 25 13.75H5C4.3125 13.75 3.75 14.3125 3.75 15C3.75 15.6875 4.3125 16.25 5 16.25ZM3.75 8.75C3.75 9.4375 4.3125 10 5 10H25C25.6875 10 26.25 9.4375 26.25 8.75C26.25 8.0625 25.6875 7.5 25 7.5H5C4.3125 7.5 3.75 8.0625 3.75 8.75Z" fill="#333333"/>'; // Ganti dengan path ikon menu
+          // menuIcon.innerHTML = '<path d="M4 6h16M4 12h16m-7 6h7"></path>'; // Ganti dengan path ikon menu
+        } else {
+          menuIcon.innerHTML = '<path d="M22.8748 7.1375C22.7591 7.02162 22.6218 6.92968 22.4706 6.86696C22.3194 6.80423 22.1572 6.77194 21.9935 6.77194C21.8298 6.77194 21.6677 6.80423 21.5165 6.86696C21.3653 6.92968 21.2279 7.02162 21.1123 7.1375L14.9998 13.2375L8.88729 7.125C8.77156 7.00927 8.63418 6.91747 8.48297 6.85484C8.33177 6.79221 8.1697 6.75997 8.00604 6.75997C7.84238 6.75997 7.68032 6.79221 7.52911 6.85484C7.37791 6.91747 7.24052 7.00927 7.12479 7.125C7.00906 7.24072 6.91726 7.37811 6.85463 7.52932C6.792 7.68052 6.75977 7.84258 6.75977 8.00625C6.75977 8.16991 6.792 8.33197 6.85463 8.48318C6.91726 8.63438 7.00906 8.77177 7.12479 8.8875L13.2373 15L7.12479 21.1125C7.00906 21.2282 6.91726 21.3656 6.85463 21.5168C6.792 21.668 6.75977 21.8301 6.75977 21.9937C6.75977 22.1574 6.792 22.3195 6.85463 22.4707C6.91726 22.6219 7.00906 22.7593 7.12479 22.875C7.24052 22.9907 7.37791 23.0825 7.52911 23.1452C7.68032 23.2078 7.84238 23.24 8.00604 23.24C8.1697 23.24 8.33177 23.2078 8.48297 23.1452C8.63418 23.0825 8.77156 22.9907 8.88729 22.875L14.9998 16.7625L21.1123 22.875C21.228 22.9907 21.3654 23.0825 21.5166 23.1452C21.6678 23.2078 21.8299 23.24 21.9935 23.24C22.1572 23.24 22.3193 23.2078 22.4705 23.1452C22.6217 23.0825 22.7591 22.9907 22.8748 22.875C22.9905 22.7593 23.0823 22.6219 23.1449 22.4707C23.2076 22.3195 23.2398 22.1574 23.2398 21.9937C23.2398 21.8301 23.2076 21.668 23.1449 21.5168C23.0823 21.3656 22.9905 21.2282 22.8748 21.1125L16.7623 15L22.8748 8.8875C23.3498 8.4125 23.3498 7.6125 22.8748 7.1375Z" fill="#333333"/>'; 
+        }
       });
     </script>
   </nav>
@@ -137,7 +156,7 @@
     </div>
   </section>
   <section class="h-[700px] mt-[188px] bg-[#FFE4E1] pt-[53px]">
-    <div class="flex flex-col justify-center items-center w-[1280px] m-auto">
+    <div class="flex flex-col justify-center items-center w-[1280px] m-auto swiper">
       <div class="w-[661px] text-center my-4">
         <h1 class="text-[32px] color-[#333] font-semibold leading-none w-[461px] mx-auto">
           Jadi bagian dari tim <span class="text-[#39BFBF]"> gerakan </span> Kenali Konten
@@ -146,8 +165,8 @@
           Konten. Kembangkan platform dan komunitas agar masyarakat bisa teredukasi untuk
           membedakan berita atau konten yang hoaks dan fakta.</p>
       </div>
-      <div class="w-[936px] flex flex-row mt-5 mb-10 overscroll-none">
-        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
+      <div class="w-[936px] flex flex-row mt-5 mb-10 overscroll-none  swiper-wrapper">
+        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3 swiper-slide">
           <div class="mx-auto mt-9">
             <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
@@ -170,7 +189,7 @@
             </a>
           </div>
         </div>
-        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3">
+        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3 swiper-slide">
           <div class="mx-auto mt-9">
             <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
@@ -193,7 +212,78 @@
             </a>
           </div>
         </div>
+        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3 swiper-slide">
+          <div class="mx-auto mt-9">
+            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
+              <path d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z" fill="#FF7366" />
+            </svg>
+          </div>
+          <div class="py-3">
+            <h2 class="text-center">Tim Relawan</h2>
+            <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
+          </div>
+          <div class="w-[245px] mx-auto">
+            <p class="text-center">
+              Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
+            </p>
+          </div>
+          <div class="mx-auto">
+            <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
+              Daftar
+              <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
+            </a>
+          </div>
+        </div>
+        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3 swiper-slide">
+          <div class="mx-auto mt-9">
+            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
+              <path d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z" fill="#FF7366" />
+            </svg>
+          </div>
+          <div class="py-3">
+            <h2 class="text-center">Tim Relawan</h2>
+            <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
+          </div>
+          <div class="w-[245px] mx-auto">
+            <p class="text-center">
+              Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
+            </p>
+          </div>
+          <div class="mx-auto">
+            <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
+              Daftar
+              <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
+            </a>
+          </div>
+        </div>
+        <div class="w-[279px] h-[300px] rounded-2xl bg-[#FFF] shadow-xl mr-4 flex flex-col gap-3 swiper-slide">
+          <div class="mx-auto mt-9">
+            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" width="40" height="40" rx="8" fill="#FFE4E1" />
+              <path d="M24.875 20C28 20 30.5 22.5 30.5 25.625C30.5 26.725 30.1875 27.7625 29.6375 28.625L33.4875 32.5L31.75 34.2375L27.85 30.4C26.9875 30.9375 25.9625 31.25 24.875 31.25C21.75 31.25 19.25 28.75 19.25 25.625C19.25 22.5 21.75 20 24.875 20ZM24.875 22.5C24.0462 22.5 23.2513 22.8292 22.6653 23.4153C22.0792 24.0013 21.75 24.7962 21.75 25.625C21.75 26.4538 22.0792 27.2487 22.6653 27.8347C23.2513 28.4208 24.0462 28.75 24.875 28.75C25.7038 28.75 26.4987 28.4208 27.0847 27.8347C27.6708 27.2487 28 26.4538 28 25.625C28 24.7962 27.6708 24.0013 27.0847 23.4153C26.4987 22.8292 25.7038 22.5 24.875 22.5ZM13 32.5C12.337 32.5 11.7011 32.2366 11.2322 31.7678C10.7634 31.2989 10.5 30.663 10.5 30V10C10.5 9.33696 10.7634 8.70107 11.2322 8.23223C11.7011 7.76339 12.337 7.5 13 7.5H14.25V16.25L17.375 14.375L20.5 16.25V7.5H28C28.663 7.5 29.2989 7.76339 29.7678 8.23223C30.2366 8.70107 30.5 9.33696 30.5 10V19.7625C28.9886 18.3086 26.9722 17.4975 24.875 17.5C22.7201 17.5 20.6535 18.356 19.1298 19.8798C17.606 21.4035 16.75 23.4701 16.75 25.625C16.75 28.5125 18.2625 31.0625 20.5375 32.5H13Z" fill="#FF7366" />
+            </svg>
+          </div>
+          <div class="py-3">
+            <h2 class="text-center">Tim Relawan</h2>
+            <h1 class="text-center text-[20px] font-semibold ">Pencari Fakta</h1>
+          </div>
+          <div class="w-[245px] mx-auto">
+            <p class="text-center">
+              Tim yang akan mencari sumber keaslian konten yang dikirim pengguna
+            </p>
+          </div>
+          <div class="mx-auto">
+            <a href="#" class="text-[16px] text-[#FF7366] flex flex-row items-center">
+              Daftar
+              <img class="w-6" src="./dist/images/ic-arrow-right.png" alt="Detail">
+            </a>
+          </div>
+        </div>
+       
       </div>
+
       <div class="mx-auto flex gap-x-6 pb-[55px]">
         <a href="">
           <img class="w-8" src="dist/images/ic-arrow-slide-left.png" alt="">
@@ -399,4 +489,30 @@
   });
 </script>
 
+<!-- swiper -->
+<script type="module">
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+  const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: false,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+</script>
 </html>
