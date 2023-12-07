@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -18,13 +18,58 @@
   width: 800px;
   height: 600px;
 }
+
+  /* Tambahkan gaya untuk preloader */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff; /* Ganti dengan warna latar belakang yang diinginkan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  /* Animasi loading */
+  #loading {
+    border: 2px solid #f3f3f3;
+    border-top: 4px solid #FF7366;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .swiper {
+    width: 800px;
+    height: 600px;
+  }
+  
+      #preloader img {
+        width: 120px; /* Sesuaikan ukuran gambar preloader */
+        height: auto;
+      }
 </style>
 </head>
 
-<body class="font-[poppins] bg-[#F7F7F7] ">
+<body class="font-[poppins] bg-[#F7F7F7]">
+<!-- Tambahkan preloader -->
+  <div id="preloader" class="flex flex-col gap-y-8">
+    <!-- Gunakan gambar "./dist/images/logo-main.png" sebagai bagian dari preloader -->
+    <img src="./dist/images/logo-main.png"/>
+    <div id="loading"></div>
+  </div>
   <!-- navbar -->
-  <div id="blur-background" class="fixed top-0 left-0 w-full h-full hidden bg-slate-700  opacity-50 bg-cover"></div>
-  <nav class="shadow sticky top-0 bg-[#F7F7F7]">
+  <div id="blur-background" class="fixed top-0 left-0 w-full h-full hidden bg-slate-700 opacity-50 bg-cover"></div>
+  <nav class="shadow sticky top-0 bg-[#F7F7F7] z-10">
     <div class="max-w-7xl mx-auto">
       <div class="flex justify-between items-center h-20 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-32">
         <!-- logo -->
@@ -33,23 +78,23 @@
         </a>
         <!-- Mobile menu button and menu for small screens -->
         <div class="xl:hidden">
-          <button id="mobile-menu-button">
+          <button id="mobile-menu-button" class="transition duration-500 ease-in-out">
             <!-- Example menu icon -->
-            <svg id="menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" viewBox="0 0 24 24" class="w-6 h-6 duration-700 transition ease-in-out">
+            <svg id="menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" viewBox="0 0 24 24" class="w-6 h-6 transition duration-500 ease-in-out">
               <path d="M5 22.5H25C25.6875 22.5 26.25 21.9375 26.25 21.25C26.25 20.5625 25.6875 20 25 20H5C4.3125 20 3.75 20.5625 3.75 21.25C3.75 21.9375 4.3125 22.5 5 22.5ZM5 16.25H25C25.6875 16.25 26.25 15.6875 26.25 15C26.25 14.3125 25.6875 13.75 25 13.75H5C4.3125 13.75 3.75 14.3125 3.75 15C3.75 15.6875 4.3125 16.25 5 16.25ZM3.75 8.75C3.75 9.4375 4.3125 10 5 10H25C25.6875 10 26.25 9.4375 26.25 8.75C26.25 8.0625 25.6875 7.5 25 7.5H5C4.3125 7.5 3.75 8.0625 3.75 8.75Z" fill="#333333"/>
             </svg>
           </button>
 
           <!-- Menu  Mobile menu (hidden by default) -->
-          <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-[#F7F7F7] py-4 shadow-2xl rounded-b-3xl ease-in-out transition">
-            <ul class="flex flex-col px-5 gap-y-8">
-              <li class="hover:cursor-pointer  text-[#FF7366]  font-medium text-base mt-8">
+          <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-[#F7F7F7] py-4 shadow-2xl rounded-b-3xl ">
+            <ul class="flex flex-col px-6 gap-y-8 sm:px-8 md:px-16 lg:px-20 xl:px-32">
+              <li class="hover:cursor-pointer  text-[#FF7366]  font-medium text-base mt-8  transition-all ease-in-out delay-300">
                 Beranda
               </li>
-              <li class="hover:cursor-pointer  text-[#333] hover:text-[#FF7366]  font-medium text-base">
+              <li class="hover:cursor-pointer  text-[#333] hover:text-[#FF7366]  font-medium text-base transition-all ease-in-out delay-300">
                 Konten Tervalidasi
               </li>
-              <li class="hover:cursor-pointer  text-[#333] hover:text-[#FF7366]  font-medium text-base">
+              <li class="hover:cursor-pointer  text-[#333] hover:text-[#FF7366]  font-medium text-base transition-all ease-in-out delay-300">
                 Donatur
               </li>
               <li class="hover:cursor-pointer font-medium text-base">
@@ -86,76 +131,103 @@
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const menuIcon = document.getElementById('menu-icon');
+      const blurBackground = document.getElementById('blur-background');
     
       mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        blurBackground.classList.toggle('hidden');
         
         // Ubah ikon menjadi "X" atau kembali ke ikon menu
         if (mobileMenu.classList.contains('hidden')) {
-          menuIcon.innerHTML = '<path d="M5 22.5H25C25.6875 22.5 26.25 21.9375 26.25 21.25C26.25 20.5625 25.6875 20 25 20H5C4.3125 20 3.75 20.5625 3.75 21.25C3.75 21.9375 4.3125 22.5 5 22.5ZM5 16.25H25C25.6875 16.25 26.25 15.6875 26.25 15C26.25 14.3125 25.6875 13.75 25 13.75H5C4.3125 13.75 3.75 14.3125 3.75 15C3.75 15.6875 4.3125 16.25 5 16.25ZM3.75 8.75C3.75 9.4375 4.3125 10 5 10H25C25.6875 10 26.25 9.4375 26.25 8.75C26.25 8.0625 25.6875 7.5 25 7.5H5C4.3125 7.5 3.75 8.0625 3.75 8.75Z" fill="#333333"/>'; // Ganti dengan path ikon menu
+          menuIcon.innerHTML = '<path d="M5 22.5H25C25.6875 22.5 26.25 21.9375 26.25 21.25C26.25 20.5625 25.6875 20 25 20H5C4.3125 20 3.75 20.5625 3.75 21.25C3.75 21.9375 4.3125 22.5 5 22.5ZM5 16.25H25C25.6875 16.25 26.25 15.6875 26.25 15C26.25 14.3125 25.6875 13.75 25 13.75H5C4.3125 13.75 3.75 14.3125 3.75 15C3.75 15.6875 4.3125 16.25 5 16.25ZM3.75 8.75C3.75 9.4375 4.3125 10 5 10H25C25.6875 10 26.25 9.4375 26.25 8.75C26.25 8.0625 25.6875 7.5 25 7.5H5C4.3125 7.5 3.75 8.0625 3.75 8.75Z" fill="#333333" class="transition duration-500 ease-in-out"/>'; // Ganti dengan path ikon menu
           // menuIcon.innerHTML = '<path d="M4 6h16M4 12h16m-7 6h7"></path>'; // Ganti dengan path ikon menu
         } else {
-          menuIcon.innerHTML = '<path d="M22.8748 7.1375C22.7591 7.02162 22.6218 6.92968 22.4706 6.86696C22.3194 6.80423 22.1572 6.77194 21.9935 6.77194C21.8298 6.77194 21.6677 6.80423 21.5165 6.86696C21.3653 6.92968 21.2279 7.02162 21.1123 7.1375L14.9998 13.2375L8.88729 7.125C8.77156 7.00927 8.63418 6.91747 8.48297 6.85484C8.33177 6.79221 8.1697 6.75997 8.00604 6.75997C7.84238 6.75997 7.68032 6.79221 7.52911 6.85484C7.37791 6.91747 7.24052 7.00927 7.12479 7.125C7.00906 7.24072 6.91726 7.37811 6.85463 7.52932C6.792 7.68052 6.75977 7.84258 6.75977 8.00625C6.75977 8.16991 6.792 8.33197 6.85463 8.48318C6.91726 8.63438 7.00906 8.77177 7.12479 8.8875L13.2373 15L7.12479 21.1125C7.00906 21.2282 6.91726 21.3656 6.85463 21.5168C6.792 21.668 6.75977 21.8301 6.75977 21.9937C6.75977 22.1574 6.792 22.3195 6.85463 22.4707C6.91726 22.6219 7.00906 22.7593 7.12479 22.875C7.24052 22.9907 7.37791 23.0825 7.52911 23.1452C7.68032 23.2078 7.84238 23.24 8.00604 23.24C8.1697 23.24 8.33177 23.2078 8.48297 23.1452C8.63418 23.0825 8.77156 22.9907 8.88729 22.875L14.9998 16.7625L21.1123 22.875C21.228 22.9907 21.3654 23.0825 21.5166 23.1452C21.6678 23.2078 21.8299 23.24 21.9935 23.24C22.1572 23.24 22.3193 23.2078 22.4705 23.1452C22.6217 23.0825 22.7591 22.9907 22.8748 22.875C22.9905 22.7593 23.0823 22.6219 23.1449 22.4707C23.2076 22.3195 23.2398 22.1574 23.2398 21.9937C23.2398 21.8301 23.2076 21.668 23.1449 21.5168C23.0823 21.3656 22.9905 21.2282 22.8748 21.1125L16.7623 15L22.8748 8.8875C23.3498 8.4125 23.3498 7.6125 22.8748 7.1375Z" fill="#333333"/>'; 
+          menuIcon.innerHTML = '<path d="M22.8748 7.1375C22.7591 7.02162 22.6218 6.92968 22.4706 6.86696C22.3194 6.80423 22.1572 6.77194 21.9935 6.77194C21.8298 6.77194 21.6677 6.80423 21.5165 6.86696C21.3653 6.92968 21.2279 7.02162 21.1123 7.1375L14.9998 13.2375L8.88729 7.125C8.77156 7.00927 8.63418 6.91747 8.48297 6.85484C8.33177 6.79221 8.1697 6.75997 8.00604 6.75997C7.84238 6.75997 7.68032 6.79221 7.52911 6.85484C7.37791 6.91747 7.24052 7.00927 7.12479 7.125C7.00906 7.24072 6.91726 7.37811 6.85463 7.52932C6.792 7.68052 6.75977 7.84258 6.75977 8.00625C6.75977 8.16991 6.792 8.33197 6.85463 8.48318C6.91726 8.63438 7.00906 8.77177 7.12479 8.8875L13.2373 15L7.12479 21.1125C7.00906 21.2282 6.91726 21.3656 6.85463 21.5168C6.792 21.668 6.75977 21.8301 6.75977 21.9937C6.75977 22.1574 6.792 22.3195 6.85463 22.4707C6.91726 22.6219 7.00906 22.7593 7.12479 22.875C7.24052 22.9907 7.37791 23.0825 7.52911 23.1452C7.68032 23.2078 7.84238 23.24 8.00604 23.24C8.1697 23.24 8.33177 23.2078 8.48297 23.1452C8.63418 23.0825 8.77156 22.9907 8.88729 22.875L14.9998 16.7625L21.1123 22.875C21.228 22.9907 21.3654 23.0825 21.5166 23.1452C21.6678 23.2078 21.8299 23.24 21.9935 23.24C22.1572 23.24 22.3193 23.2078 22.4705 23.1452C22.6217 23.0825 22.7591 22.9907 22.8748 22.875C22.9905 22.7593 23.0823 22.6219 23.1449 22.4707C23.2076 22.3195 23.2398 22.1574 23.2398 21.9937C23.2398 21.8301 23.2076 21.668 23.1449 21.5168C23.0823 21.3656 22.9905 21.2282 22.8748 21.1125L16.7623 15L22.8748 8.8875C23.3498 8.4125 23.3498 7.6125 22.8748 7.1375Z" fill="#333333" class="transition duration-500 ease-in-out"/>'; 
         }
       });
     </script>
+    <script>
+      // Tambahkan script untuk menghilangkan preloader setelah halaman selesai dimuat
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hilangkan preloader
+        document.getElementById("preloader").style.display = "none";
+        // Tampilkan konten setelah halaman dimuat
+        document.getElementById("content").style.display = "block";
+      });
+  
+      // ... (script yang sama seperti yang Anda berikan) ...
+    </script>
   </nav>
 
-  <section class="flex flex-row justify-around items-center mt-[90px] max-w-4xl mx-auto">
-    <div class="text-center ">
-      <div class="text-[#151F33] text-[128px] text-9xl font-bold">
+  <section class="flex flex-wrap justify-around items-center mt-[90px] max-w-4xl mx-auto">
+    <div class="text-center">
+      <div class="text-[#151F33] text-7xl sm:text-9xl font-bold">
         68%
       </div>
-      <div class="font-bold text-[32px] left-0">
+      <div class="font-bold max-[748px]:hidden only-[600px]:block text-3xl lg:text-[32px] lg:block left-0 transition-all ease-in-out duration-1000">
         Media Sosial Jadi <span class="text-[#FF7366]">Sumber Hoaks</span><br> Terbesar
         Tahun 2023
       </div>
     </div>
     <div>
-      <img loading="lazy" src="dist/icons/hero-right.svg" alt="">
+      <img class="w-[100.939px] sm:w-[231.94px] transition-all ease-in-out duration-1000" loading="lazy" src="dist/icons/hero-right.svg" alt="">
+    </div>
+    <div class="font-bold lg:hidden text-lg text-center sm:text-[32px] pt-2 min-[748px]:hidden transition-all ease-in-out duration-700">
+      Media Sosial Jadi <span class="text-[#FF7366]">Sumber Hoaks</span><br> Terbesar
+      Tahun 2023
     </div>
   </section>
-  <section class="flex flex-row justify-normal gap-[20px] w-[824px] px-[24px] py-[28px] bg-[#fff] shadow-xl mx-auto mt-[60px] rounded-[8px]">
-    <div class="w-[139px]">
-      <img loading="lazy" src="./dist/icons/favicon.svg" alt="logo" class="w-[139px]">
-    </div>
-    <div class="w-[605px]">
-      <p class="font-normal text-[16px]">
-        Kenali Konten adalah website untuk memvalidasi keaslian konten yang tersebar di
-        situs maupun media sosial. Kirimkan screenshot konten, berita, dan tautan
-        informasi lainnya yang kamu baca. Selanjutnya biarkan tim Kenali Konten yang
-        memvalidasi konten tersebut
-        <span class="text-[#FF1F39] font-semibold">hoaks</span> atau <span class="text-[#58BF18] font-semibold">fakta</span>.
-      </p>
-      <div class="flex flex-row mt-5 gap-x-5">
-        <button id="modalKirimKonten" class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans">
-          Coba Sekarang
-        </button>
-        <button class="w-[228px] px-5 py-3 bg-[#fff] shadow-xl rounded-full  text-[#FF7366] border-solid border-[1.5px] border-[#FF7366] font-sans">
-          Lihat Konten Tervalidasi
-        </button>
+
+  <section class="upload flex justify-center mt-[60px]">
+    <div
+      class="flex flex-wrap justify-normal gap-[20px] h-auto max-sm:w-[343px] md:w-[824px] px-[24px] py-[28px] bg-[#fff] shadow-xl rounded-[8px] transition-all ease-in-out duration-1000">
+      <div class="w-[139px]">
+        <img loading="lazy" src="./dist/icons/favicon.svg" alt="logo" class="w-[139px]">
       </div>
+      <div class="">
+        <p class="font-normal text-[16px] w-auto max-sm:w-[2/3]">
+          Kenali Konten adalah website untuk memvalidasi keaslian konten yang tersebar di situs maupun media sosial. Kirimkan screenshot konten, berita, dan tautan
+          informasi lainnya yang kamu baca. Selanjutnya biarkan tim Kenali Konten yang
+          memvalidasi konten tersebut
+          <span class="text-[#FF1F39] font-semibold">hoaks</span> atau <span
+            class="text-[#58BF18] font-semibold">fakta</span>.
+        </p>
+        <div class="flex flex-wrap mt-5 gap-x-5 max-md:justify-center max-md:gap-y-5">
+          <button id="modalKirimKonten"
+            class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans">
+            Coba Sekarang
+          </button>
+          <button
+            class="w-[228px] px-5 py-3 bg-[#fff] shadow-xl rounded-full  text-[#FF7366] border-solid border-[1.5px] border-[#FF7366] font-sans">
+            Lihat Konten Tervalidasi
+          </button>
+        </div>
+      </div>
+  
     </div>
   </section>
-  <section class="flex flex-row justify-between items-center w-[824px] mt-[215px] mx-auto">
-    <div class="w-[400px] pr-[40px]">
-      <h1 class="text-[32px] color-[#333] font-semibold leading-none">
+
+
+  <section class="flex flex-wrap justify-between items-center w-auto max-sm:gap-y-4 sm:w-[824px] mt-[215px] mx-auto p-3">
+    <div class="w-auto flex flex-col sm:w-[400px] sm:pr-[40px] ">
+      <h1 class="text-[18px] sm:text-[32px] color-[#333] font-semibold leading-none">
         Eits! Baru baca judul, tapi udah langsung percaya aja?
       </h1>
       <p class="my-4">Jangan dulu terbawa emosi ketika baru membaca judul berita. Tonton
         ini dulu biar kamu paham apa yang mesti dilakukan sebelum percaya pada suatu
         berita</p>
-      <div class="pt-3">
+      <div class="pt-3 ">
         <a href="https://www.youtube.com/embed/0RktiyVNu7U?si=JcNW9GRea4wFAvyK" target="_blank" class="w-[228px] px-5 bg-[#FF7366] shadow-xl rounded-full py-3 text-[#fff] font-sans">
           Tonton di Youtube
         </a>
       </div>
     </div>
     <div class="w-[400px]">
-      <iframe class="rounded-[8px]" width="372" height="210" src="https://www.youtube.com/embed/0RktiyVNu7U?si=JcNW9GRea4wFAvyK" title="YouTube: Sebelum percaya judulnya, pause dulu" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe class="rounded-[8px] aspect-object-cover" width="372" height="210" src="https://www.youtube.com/embed/0RktiyVNu7U?si=JcNW9GRea4wFAvyK" title="YouTube: Sebelum percaya judulnya, pause dulu" frameborder="0" allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </section>
-  <section class="h-[700px] mt-[188px] bg-[#FFE4E1] pt-[53px]">
+  
+  <section class="flex flex-wrap h-[700px] mt-[188px] bg-[#FFE4E1] pt-[53px]">
     <div class="flex flex-col justify-center items-center w-[1280px] m-auto swiper">
       <div class="w-[661px] text-center my-4">
         <h1 class="text-[32px] color-[#333] font-semibold leading-none w-[461px] mx-auto">
@@ -204,7 +276,7 @@
       </div>
     </div>
   </section>
-  <section class="flex flex-row justify-normal w-[824px] mt-[188px] mx-auto">
+  <section class="flex flex-row justify-normal w-auto sm:w-[824px] mt-[188px] mx-auto">
     <div class="w-[400px] pr-[40px] ">
       <img class="w-[348.567px] h-[257.17px]" src="./dist/images/img-collabs.png" alt="" srcset="">
     </div>
@@ -222,9 +294,9 @@
       </button>
     </div>
   </section>
-  <footer class="mt-[188px] bg-[#39BFBF]  ">
-    <div class="w-[1280px] m-auto">
-      <div class="w-[936px] flex flex-row justify-between mx-auto py-[60px]">
+  <footer class="mt-[188px] bg-[#39BFBF]  flex flex-wrap ">
+    <div class="w-auto sm:w-[1280px] m-auto">
+      <div class="w-auto sm:w-[936px] flex flex-col sm:flex-row justify-between mx-auto py-[60px]">
         <div class="w-[400px]">
           <img class="w-[167px] h-[90px] mb-5" src="./dist/images/logo-main.png" alt="Logo kenalikonten" srcset="./dist/images/logo-main.png">
           <p class="pt-5 text-[#333] font-[16px]">Kenali Konten adalah sebuah gerakan
@@ -309,7 +381,7 @@
 
   <!-- sukses -->
   <div id="modalSukses" class="hidden fixed inset-0 bg-slate-600 bg-opacity-50 overflow-y-auto h-500 flex items-center justify-center transition-all">
-    <div class="bg-[#F7F7F7] rounded-lg shadow-xl w-[600px] opacity-100 transform  transition-transform duration-400 p-8">
+    <div class="bg-[#F7F7F7] rounded-lg shadow-xl w-[600px] opacity-100 transform transition-transform duration-400 p-8">
       <div class="flex justify-end">
         <button id="closeModalBtn">
           <svg class="bg-[#FFE4E1] w-[32px] h-[32px] rounded-full" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -319,7 +391,6 @@
       </div>
  
       <form action="" method="post" class="flex flex-col gap-7">
-
         <div class="text-zinc-800 text-center text-3xl font-semibold self-center whitespace-nowrap mt-7">
           Terkirim!
         </div>
@@ -346,7 +417,7 @@
   </div>
  
 </body>
-
+<!-- modal -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // Get modal and buttons
