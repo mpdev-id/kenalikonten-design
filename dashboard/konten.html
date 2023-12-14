@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <script script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <style>
+            /* Tambahkan gaya untuk preloader */
+            #preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                /* Ganti dengan warna latar belakang yang diinginkan */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+            /* Animasi loading */
+            #loading {
+                border: 2px solid #f3f3f3;
+                border-top: 4px solid #FF7366;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                animation: spin 2s linear infinite;
+            }
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            #preloader img {
+                width: 120px;
+                /* Sesuaikan ukuran gambar preloader */
+                height: auto;
+            }
+        </style>
+    </head>
+
+    <body class="font-[poppins]  bg-neutral-100 flex flex-row">
+        <!-- Tambahkan preloader -->
+        <div id="preloader" class="flex flex-col gap-y-8 h-[100vh]">
+            <!-- Gunakan gambar "./dist/images/logo-main.png" sebagai bagian dari preloader -->
+            <img src="./dist/images/logo-main.png" />
+            <div id="loading"></div>
+        </div>
+
+        <!-- left atas-->
+        <section class="grow-0 w-[180px] min-h-screen py-4 bg-white border-r border-neutral-300 flex-col justify-start items-center gap-[52px] inline-flex">
+            <div class="w-[83px] h-[45px] justify-center items-center inline-flex">
+                <img class="w-[83px] h-[45px]" src="../dist/images/logo-main.png" />
+            </div>
+            <div class="self-stretch h-[228px] flex-col justify-start items-start gap-3 flex">
+                <div class="self-stretch h-9 px-3 border-r-2 border-red-400 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="index.html" class="text-red-400 text-base font-normal font-['Poppins']">Beranda</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="konten.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Konten Masuk</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="jenis-tim.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Jenis Tim</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="anggota.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Anggota Tim</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="loker.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Loker Tim</a>
+                </div>
+            </div>
+        </section>
+        <!-- kanan atas -->
+        <section class="grow headerkanan">
+            <div class="h-[60px] px-5 bg-neutral-100 justify-between items-center inline-flex w-full shadow">
+                <div class="text-zinc-800 text-2xl font-medium font-['Poppins']">Beranda</div>
+                <div class="justify-start items-center gap-2 flex">
+                    <div class="text-black text-sm font-normal font-['Poppins']">Admin satu</div>
+                    <div class="justify-start items-center gap-0.5 flex">
+                        <img class="w-10 h-10 rounded-full border-2 border-white" src="https://via.placeholder.com/40x40" />
+                        <div class="w-6 h-6 relative origin-top-left -rotate-90"></div>
+                    </div>
+                </div>
+            </div>           
+            <!-- start content -->
+            <section class="p-5 conten">
+                <div class="flex flex-col max-w-7xl content-body gap-4">
+                    
+                    <!-- dashboard total -->
+                    <section class="inline-flex justify-between w-full gap-4">
+                      
+                        <div x-data="{ openTab: 1 }">
+                            <!-- Tab buttons -->
+                            <ul class="flex">
+                              <li @click="openTab = 1" :class="{ 'bg-blue-500': openTab === 1 }" class="cursor-pointer text-white px-4 py-2">Tab 1</li>
+                              <li @click="openTab = 2" :class="{ 'bg-blue-500': openTab === 2 }" class="cursor-pointer text-white px-4 py-2">Tab 2</li>
+                              <li @click="openTab = 3" :class="{ 'bg-blue-500': openTab === 3 }" class="cursor-pointer text-white px-4 py-2">Tab 3</li>
+                            </ul>
+                          
+                            <!-- Tab content -->
+                            <div x-show="openTab === 1" class="py-4">Content for Tab 1</div>
+                            <div x-show="openTab === 2" class="py-4">Content for Tab 2</div>
+                            <div x-show="openTab === 3" class="py-4">Content for Tab 3</div>
+                          </div>
+                          
+                          
+                        
+                    </section>
+
+                
+                
+            </div>
+            </section>
+        </section>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+
+
+        <script>
+            
+            // Tambahkan script untuk menghilangkan preloader setelah halaman selesai dimuat
+            document.addEventListener("DOMContentLoaded", function () {
+                // Hilangkan preloader
+                document.getElementById("preloader").style.display = "none";
+                // Tampilkan konten setelah halaman dimuat
+                document.getElementById("content").style.display = "block";
+            });
+        </script>
+    </body>
+</html>

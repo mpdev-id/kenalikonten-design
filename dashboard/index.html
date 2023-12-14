@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <script script src="https://cdn.tailwindcss.com/3.3.5"></script>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <style>
+            /* Tambahkan gaya untuk preloader */
+            #preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                /* Ganti dengan warna latar belakang yang diinginkan */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+            /* Animasi loading */
+            #loading {
+                border: 2px solid #f3f3f3;
+                border-top: 4px solid #FF7366;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                animation: spin 2s linear infinite;
+            }
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            #preloader img {
+                width: 120px;
+                /* Sesuaikan ukuran gambar preloader */
+                height: auto;
+            }
+        </style>
+    </head>
+
+    <body class="font-[poppins]  bg-neutral-100 flex flex-row">
+        <!-- Tambahkan preloader -->
+        <div id="preloader" class="flex flex-col gap-y-8 h-[100vh]">
+            <!-- Gunakan gambar "./dist/images/logo-main.png" sebagai bagian dari preloader -->
+            <img src="./dist/images/logo-main.png" />
+            <div id="loading"></div>
+        </div>
+
+        <!-- left atas-->
+        <section class="grow-0 w-[180px] min-h-screen py-4 bg-white border-r border-neutral-300 flex-col justify-start items-center gap-[52px] inline-flex">
+            <div class="w-[83px] h-[45px] justify-center items-center inline-flex">
+                <img class="w-[83px] h-[45px]" src="../dist/images/logo-main.png" />
+            </div>
+            <div class="self-stretch h-[228px] flex-col justify-start items-start gap-3 flex">
+                <div class="self-stretch h-9 px-3 border-r-2 border-red-400 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="index.html" class="text-red-400 text-base font-normal font-['Poppins']">Beranda</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="konten.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Konten Masuk</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="jenis-tim.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Jenis Tim</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="anggota.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Anggota Tim</a>
+                </div>
+                <div class="self-stretch h-9 px-3 justify-start items-center gap-2 inline-flex  hover:border-r-2 hover:border-red-400 ">
+                    <div class="w-6 h-6 relative"></div>
+                    <a href="loker.html" class="text-neutral-400 text-base font-normal font-['Poppins'] hover:text-red-400">Loker Tim</a>
+                </div>
+            </div>
+        </section>
+        <!-- kanan atas -->
+        <section class="grow headerkanan">
+            <div class="h-[60px] px-5 bg-neutral-100 justify-between items-center inline-flex w-full shadow">
+                <div class="text-zinc-800 text-2xl font-medium font-['Poppins']">Beranda</div>
+                <div class="justify-start items-center gap-2 flex">
+                    <div class="text-black text-sm font-normal font-['Poppins']">Admin satu</div>
+                    <div class="justify-start items-center gap-0.5 flex">
+                        <img class="w-10 h-10 rounded-full border-2 border-white" src="https://via.placeholder.com/40x40" />
+                        <div class="w-6 h-6 relative origin-top-left -rotate-90"></div>
+                    </div>
+                </div>
+            </div>           
+            <!-- start content -->
+            <section class="p-5 conten">
+                <div class="flex flex-col max-w-7xl content-body gap-4">
+                    
+                    <!-- dashboard total -->
+                    <section class="inline-flex justify-between w-full gap-4">
+                        <div
+                            class="w-[340px] h-[150px] bg-white rounded-lg border border-neutral-300 justify-center items-center gap-3 inline-flex">
+                            <div class="w-20 h-20 relative">
+                                <div class="w-20 h-20 left-0 top-0 absolute bg-red-400 rounded-full"></div>
+                                <div class="w-[58.18px] h-[58.18px] left-[10.91px] top-[10.91px] absolute"></div>
+                            </div>
+                            <div class="flex-col justify-start items-center gap-1 inline-flex">
+                                <div class="text-zinc-800 text-[40px] font-semibold font-['Poppins']">154</div>
+                                <div class="text-zinc-800 text-base font-normal font-['Poppins']">Total Konten Masuk
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div
+                            class="w-[340px] h-[150px] bg-white rounded-lg border border-neutral-300 justify-center items-center gap-3 inline-flex">
+                            <div class="w-20 h-20 relative">
+                                <div class="w-20 h-20 left-0 top-0 absolute bg-red-400 rounded-full"></div>
+                                <div class="w-[58.18px] h-[58.18px] left-[11px] top-[11px] absolute"></div>
+                            </div>
+                            <div class="flex-col justify-start items-center gap-1 inline-flex">
+                                <div class="text-zinc-800 text-[40px] font-semibold font-['Poppins']">24</div>
+                                <div class="text-zinc-800 text-base font-normal font-['Poppins']">Konten Divalidasi
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div
+                            class="w-[340px] h-[150px] bg-white rounded-lg border border-neutral-300 justify-center items-center gap-3 inline-flex">
+                            <div class="w-20 h-20 relative">
+                                <div class="w-20 h-20 left-0 top-0 absolute bg-red-400 rounded-full"></div>
+                                <div class="w-[58.18px] h-[58.18px] left-[10.83px] top-[11px] absolute"></div>
+                            </div>
+                            <div class="flex-col justify-start items-center gap-1 inline-flex">
+                                <div class="text-zinc-800 text-[40px] font-semibold font-['Poppins']">37</div>
+                                <div class="text-zinc-800 text-base font-normal font-['Poppins']">Konten Belum
+                                    Dibalas</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- data data -->
+                    <section class="datadata flex flex-row gap-4">
+
+                        <!-- kiri -->
+                        <section class="kiri">
+                            <div class="w-[454px] h-[562px] p-3 bg-white rounded-lg border border-neutral-300 flex-col justify-start items-start gap-5 inline-flex">
+                                <div class="text-zinc-800 text-xl font-medium font-['Poppins']">Konten Masuk Terbaru</div>
+                            
+                                <div class="flex-col justify-start items-end gap-4 flex">
+                                    <div class="justify-start items-center gap-10 inline-flex">
+                                        <div class="justify-start items-center gap-2 flex">
+                                            <img class="w-[83px] h-[50px]" src="https://via.placeholder.com/83x50" />
+                                            <div class="flex-col justify-center items-start gap-0.5 inline-flex">
+                                                <div class="text-zinc-800 text-base font-normal font-['Poppins']">blabla@gmail.com</div>
+                                                <div class="text-zinc-500 text-sm font-normal font-['Poppins']">3 jam yang lalu</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-[145px] text-right text-yellow-500 text-base font-normal font-['Poppins']">sedang diperiksa</div>
+                                    </div>
+                                </div>
+                                <div class="text-red-400 text-sm font-normal font-['Poppins']">Lihat lebih banyak</div>
+                            </div>
+                        </section>
+
+                        <!-- kanan -->
+                        <section class="kanan grid grid-rows-2 gap-4 w-full">
+                        
+                            <div class="min-w-full h-[280px] px-3 bg-white rounded-lg border border-neutral-300 flex-col justify-center items-center gap-3 inline-flex">
+                                <div class="self-stretch justify-between items-center inline-flex">
+                                    <div class="text-zinc-800 text-xl font-medium font-['Poppins']">Total Konten Masuk</div>
+                                    <div class="justify-start items-center gap-1 flex">
+                                        <div class="text-zinc-800 text-sm font-normal font-['Poppins']">2023</div>
+                                        <div class="w-4 h-4 relative origin-top-left -rotate-90"></div>
+                                    </div>
+                                </div>
+                                <div class="w-[559px] h-[200px] relative">
+                                    <div class="w-[534px] h-[180px] left-[13px] top-0 absolute">
+                                    </div>
+                                    <div class="w-[559px] h-4 left-0 top-[184px] absolute p-5">
+                                        <div class="left-0 top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Jan</div>
+                                        <div class="left-[49.64px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Feb</div>
+                                        <div class="left-[97.77px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Mar</div>
+                                        <div class="left-[147.41px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Apr</div>
+                                        <div class="left-[194.05px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">May</div>
+                                        <div class="left-[243.18px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Jun</div>
+                                        <div class="left-[294.82px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Jul</div>
+                                        <div class="left-[340.45px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Aug</div>
+                                        <div class="left-[389.59px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Sep</div>
+                                        <div class="left-[438.73px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Oct</div>
+                                        <div class="left-[486.36px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Nov</div>
+                                        <div class="left-[535px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Dec</div>
+                                    </div>
+                                    <div class="w-[535px] h-[120.96px] left-[12.50px] top-[59.04px] absolute">
+                                    </div>
+                                    <div class="w-[540px] h-[115.52px] left-[10px] top-[56.54px] absolute p-5">
+                                        <div class="w-[5px] h-[5px] left-0 top-[16.56px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[48.64px] top-[39.96px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[97.27px] top-[110.16px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[145.91px] top-0 absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[194.55px] top-[68.76px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[243.18px] top-[84.96px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[291.82px] top-[92.16px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[340.45px] top-[85.68px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[389.09px] top-[89.64px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[437.73px] top-[110.52px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[486.36px] top-[101.52px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[535px] top-[99.36px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                    </div>
+                                    <div class="w-[555px] h-[126.52px] left-0 top-[41.04px] absolute">
+                                        <div class="left-0 top-[16.56px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">290</div>
+                                        <div class="left-[49.14px] top-[39.96px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">225</div>
+                                        <div class="left-[101.77px] top-[110.16px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">30</div>
+                                        <div class="left-[145.91px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">336</div>
+                                        <div class="left-[194.55px] top-[68.76px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">145</div>
+                                        <div class="left-[243.18px] top-[84.96px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">100</div>
+                                        <div class="left-[295.82px] top-[92.16px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">80</div>
+                                        <div class="left-[344.45px] top-[85.68px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">98</div>
+                                        <div class="left-[393.09px] top-[89.64px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">87</div>
+                                        <div class="left-[441.73px] top-[110.52px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">29</div>
+                                        <div class="left-[490.36px] top-[101.52px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">54</div>
+                                        <div class="left-[539px] top-[99.36px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">60</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="min-w-full h-[280px] px-3 bg-white rounded-lg border border-neutral-300 flex-col justify-center items-center gap-3 inline-flex">
+                                <div class="self-stretch justify-between items-center inline-flex">
+                                    <div class="text-zinc-800 text-xl font-medium font-['Poppins']">Total Konten Masuk</div>
+                                    <div class="justify-start items-center gap-1 flex">
+                                        <div class="text-zinc-800 text-sm font-normal font-['Poppins']">2023</div>
+                                        <div class="w-4 h-4 relative origin-top-left -rotate-90"></div>
+                                    </div>
+                                </div>
+                                <div class="w-[559px] h-[200px] relative">
+                                    <div class="w-[534px] h-[180px] left-[13px] top-0 absolute">
+                                    </div>
+                                    <div class="w-[559px] h-4 left-0 top-[184px] absolute">
+                                        <div class="left-0 top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Jan</div>
+                                        <div class="left-[49.64px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Feb</div>
+                                        <div class="left-[97.77px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Mar</div>
+                                        <div class="left-[147.41px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Apr</div>
+                                        <div class="left-[194.05px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">May</div>
+                                        <div class="left-[243.18px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Jun</div>
+                                        <div class="left-[294.82px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Jul</div>
+                                        <div class="left-[340.45px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Aug</div>
+                                        <div class="left-[389.59px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Sep</div>
+                                        <div class="left-[438.73px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Oct</div>
+                                        <div class="left-[486.36px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Nov</div>
+                                        <div class="left-[535px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">Dec</div>
+                                    </div>
+                                    <div class="w-[535px] h-[120.96px] left-[12.50px] top-[59.04px] absolute">
+                                    </div>
+                                    <div class="w-[540px] h-[115.52px] left-[10px] top-[56.54px] absolute">
+                                        <div class="w-[5px] h-[5px] left-0 top-[16.56px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[48.64px] top-[39.96px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[97.27px] top-[110.16px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[145.91px] top-0 absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[194.55px] top-[68.76px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[243.18px] top-[84.96px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[291.82px] top-[92.16px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[340.45px] top-[85.68px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[389.09px] top-[89.64px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[437.73px] top-[110.52px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[486.36px] top-[101.52px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                        <div class="w-[5px] h-[5px] left-[535px] top-[99.36px] absolute bg-white rounded-full border-2 border-red-400"></div>
+                                    </div>
+                                    <div class="w-[555px] h-[126.52px] left-0 top-[41.04px] absolute">
+                                        <div class="left-0 top-[16.56px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">290</div>
+                                        <div class="left-[49.14px] top-[39.96px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">225</div>
+                                        <div class="left-[101.77px] top-[110.16px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">30</div>
+                                        <div class="left-[145.91px] top-0 absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">336</div>
+                                        <div class="left-[194.55px] top-[68.76px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">145</div>
+                                        <div class="left-[243.18px] top-[84.96px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">100</div>
+                                        <div class="left-[295.82px] top-[92.16px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">80</div>
+                                        <div class="left-[344.45px] top-[85.68px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">98</div>
+                                        <div class="left-[393.09px] top-[89.64px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">87</div>
+                                        <div class="left-[441.73px] top-[110.52px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">29</div>
+                                        <div class="left-[490.36px] top-[101.52px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">54</div>
+                                        <div class="left-[539px] top-[99.36px] absolute text-center text-zinc-800 text-sm font-normal font-['Roboto']">60</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+                </section>
+                
+            </div>
+            </section>
+        </section>
+
+
+        
+
+        <script>
+            // Tambahkan script untuk menghilangkan preloader setelah halaman selesai dimuat
+            document.addEventListener("DOMContentLoaded", function () {
+                // Hilangkan preloader
+                document.getElementById("preloader").style.display = "none";
+                // Tampilkan konten setelah halaman dimuat
+                document.getElementById("content").style.display = "block";
+            });
+        </script>
+    </body>
+</html>
